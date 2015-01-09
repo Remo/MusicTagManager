@@ -108,6 +108,7 @@
             this.btnPath.TabIndex = 10;
             this.btnPath.Text = "Path";
             this.btnPath.UseVisualStyleBackColor = true;
+            this.btnPath.Click += new System.EventHandler(this.btnPath_Click);
             // 
             // txtPath
             // 
@@ -117,6 +118,7 @@
             this.txtPath.Name = "txtPath";
             this.txtPath.Size = new System.Drawing.Size(310, 20);
             this.txtPath.TabIndex = 9;
+            this.txtPath.TextChanged += new System.EventHandler(this.txtPath_TextChanged);
             // 
             // gbxTag
             // 
@@ -169,6 +171,7 @@
             this.btnCancel.TabIndex = 7;
             this.btnCancel.Text = "Cancel";
             this.btnCancel.UseVisualStyleBackColor = true;
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
             // btnApply
             // 
@@ -179,6 +182,7 @@
             this.btnApply.TabIndex = 6;
             this.btnApply.Text = "Apply";
             this.btnApply.UseVisualStyleBackColor = true;
+            this.btnApply.Click += new System.EventHandler(this.btnApply_Click);
             // 
             // chkChangeCover
             // 
@@ -287,6 +291,7 @@
             this.picCover.Size = new System.Drawing.Size(459, 231);
             this.picCover.TabIndex = 7;
             this.picCover.TabStop = false;
+            this.picCover.Click += new System.EventHandler(this.picCover_Click);
             // 
             // txtYear
             // 
