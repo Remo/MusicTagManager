@@ -30,11 +30,15 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Main));
             this.fbdPath = new System.Windows.Forms.FolderBrowserDialog();
-            this.txtPath = new System.Windows.Forms.TextBox();
-            this.btnPath = new System.Windows.Forms.Button();
+            this.fdgPicture = new System.Windows.Forms.OpenFileDialog();
+            this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.dgvFiles = new System.Windows.Forms.DataGridView();
+            this.btnPath = new System.Windows.Forms.Button();
+            this.txtPath = new System.Windows.Forms.TextBox();
             this.gbxTag = new System.Windows.Forms.GroupBox();
             this.chkChangeTittle = new System.Windows.Forms.CheckBox();
+            this.btnCancel = new System.Windows.Forms.Button();
+            this.btnApply = new System.Windows.Forms.Button();
             this.chkChangeCover = new System.Windows.Forms.CheckBox();
             this.chkChangeAlbumYear = new System.Windows.Forms.CheckBox();
             this.chkChangeAlbumTittle = new System.Windows.Forms.CheckBox();
@@ -52,46 +56,67 @@
             this.lblAlbumCover = new System.Windows.Forms.Label();
             this.lblAlbumTittle = new System.Windows.Forms.Label();
             this.lblArtist = new System.Windows.Forms.Label();
-            this.btnApply = new System.Windows.Forms.Button();
-            this.btnCancel = new System.Windows.Forms.Button();
-            this.fdgPicture = new System.Windows.Forms.OpenFileDialog();
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
+            this.splitContainer1.Panel1.SuspendLayout();
+            this.splitContainer1.Panel2.SuspendLayout();
+            this.splitContainer1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvFiles)).BeginInit();
             this.gbxTag.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picCover)).BeginInit();
             this.SuspendLayout();
             // 
-            // txtPath
+            // splitContainer1
             // 
-            this.txtPath.Location = new System.Drawing.Point(13, 13);
-            this.txtPath.Name = "txtPath";
-            this.txtPath.Size = new System.Drawing.Size(361, 20);
-            this.txtPath.TabIndex = 0;
-            this.txtPath.TextChanged += new System.EventHandler(this.txtPath_TextChanged);
+            this.splitContainer1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.splitContainer1.Location = new System.Drawing.Point(0, 0);
+            this.splitContainer1.Name = "splitContainer1";
             // 
-            // btnPath
+            // splitContainer1.Panel1
             // 
-            this.btnPath.Location = new System.Drawing.Point(380, 11);
-            this.btnPath.Name = "btnPath";
-            this.btnPath.Size = new System.Drawing.Size(75, 23);
-            this.btnPath.TabIndex = 1;
-            this.btnPath.Text = "Path";
-            this.btnPath.UseVisualStyleBackColor = true;
-            this.btnPath.Click += new System.EventHandler(this.btnPath_Click);
+            this.splitContainer1.Panel1.Controls.Add(this.dgvFiles);
+            this.splitContainer1.Panel1.Controls.Add(this.btnPath);
+            this.splitContainer1.Panel1.Controls.Add(this.txtPath);
+            // 
+            // splitContainer1.Panel2
+            // 
+            this.splitContainer1.Panel2.Controls.Add(this.gbxTag);
+            this.splitContainer1.Size = new System.Drawing.Size(932, 732);
+            this.splitContainer1.SplitterDistance = 420;
+            this.splitContainer1.TabIndex = 9;
             // 
             // dgvFiles
             // 
             this.dgvFiles.AllowUserToAddRows = false;
             this.dgvFiles.AllowUserToDeleteRows = false;
-            this.dgvFiles.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
+            this.dgvFiles.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvFiles.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.dgvFiles.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvFiles.Location = new System.Drawing.Point(4, 39);
+            this.dgvFiles.Location = new System.Drawing.Point(13, 46);
             this.dgvFiles.Name = "dgvFiles";
             this.dgvFiles.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvFiles.Size = new System.Drawing.Size(451, 537);
-            this.dgvFiles.TabIndex = 8;
-            this.dgvFiles.KeyDown += new System.Windows.Forms.KeyEventHandler(this.dgvFiles_KeyDown);
+            this.dgvFiles.Size = new System.Drawing.Size(391, 674);
+            this.dgvFiles.TabIndex = 11;
+            // 
+            // btnPath
+            // 
+            this.btnPath.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnPath.Location = new System.Drawing.Point(329, 17);
+            this.btnPath.Name = "btnPath";
+            this.btnPath.Size = new System.Drawing.Size(75, 23);
+            this.btnPath.TabIndex = 10;
+            this.btnPath.Text = "Path";
+            this.btnPath.UseVisualStyleBackColor = true;
+            // 
+            // txtPath
+            // 
+            this.txtPath.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtPath.Location = new System.Drawing.Point(13, 17);
+            this.txtPath.Name = "txtPath";
+            this.txtPath.Size = new System.Drawing.Size(310, 20);
+            this.txtPath.TabIndex = 9;
             // 
             // gbxTag
             // 
@@ -99,6 +124,8 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.gbxTag.Controls.Add(this.chkChangeTittle);
+            this.gbxTag.Controls.Add(this.btnCancel);
+            this.gbxTag.Controls.Add(this.btnApply);
             this.gbxTag.Controls.Add(this.chkChangeCover);
             this.gbxTag.Controls.Add(this.chkChangeAlbumYear);
             this.gbxTag.Controls.Add(this.chkChangeAlbumTittle);
@@ -116,10 +143,10 @@
             this.gbxTag.Controls.Add(this.lblAlbumCover);
             this.gbxTag.Controls.Add(this.lblAlbumTittle);
             this.gbxTag.Controls.Add(this.lblArtist);
-            this.gbxTag.Location = new System.Drawing.Point(476, 13);
+            this.gbxTag.Location = new System.Drawing.Point(14, 17);
             this.gbxTag.Name = "gbxTag";
-            this.gbxTag.Size = new System.Drawing.Size(242, 568);
-            this.gbxTag.TabIndex = 3;
+            this.gbxTag.Size = new System.Drawing.Size(482, 703);
+            this.gbxTag.TabIndex = 4;
             this.gbxTag.TabStop = false;
             this.gbxTag.Text = "Tags";
             // 
@@ -132,6 +159,26 @@
             this.chkChangeTittle.TabIndex = 17;
             this.chkChangeTittle.Text = "Change tittle TAG to filename";
             this.chkChangeTittle.UseVisualStyleBackColor = true;
+            // 
+            // btnCancel
+            // 
+            this.btnCancel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnCancel.Location = new System.Drawing.Point(389, 651);
+            this.btnCancel.Name = "btnCancel";
+            this.btnCancel.Size = new System.Drawing.Size(75, 23);
+            this.btnCancel.TabIndex = 7;
+            this.btnCancel.Text = "Cancel";
+            this.btnCancel.UseVisualStyleBackColor = true;
+            // 
+            // btnApply
+            // 
+            this.btnApply.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnApply.Location = new System.Drawing.Point(308, 651);
+            this.btnApply.Name = "btnApply";
+            this.btnApply.Size = new System.Drawing.Size(75, 23);
+            this.btnApply.TabIndex = 6;
+            this.btnApply.Text = "Apply";
+            this.btnApply.UseVisualStyleBackColor = true;
             // 
             // chkChangeCover
             // 
@@ -150,7 +197,7 @@
             this.chkChangeAlbumYear.AutoSize = true;
             this.chkChangeAlbumYear.Checked = true;
             this.chkChangeAlbumYear.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.chkChangeAlbumYear.Location = new System.Drawing.Point(221, 108);
+            this.chkChangeAlbumYear.Location = new System.Drawing.Point(461, 108);
             this.chkChangeAlbumYear.Name = "chkChangeAlbumYear";
             this.chkChangeAlbumYear.Size = new System.Drawing.Size(15, 14);
             this.chkChangeAlbumYear.TabIndex = 15;
@@ -162,7 +209,7 @@
             this.chkChangeAlbumTittle.AutoSize = true;
             this.chkChangeAlbumTittle.Checked = true;
             this.chkChangeAlbumTittle.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.chkChangeAlbumTittle.Location = new System.Drawing.Point(221, 83);
+            this.chkChangeAlbumTittle.Location = new System.Drawing.Point(461, 83);
             this.chkChangeAlbumTittle.Name = "chkChangeAlbumTittle";
             this.chkChangeAlbumTittle.Size = new System.Drawing.Size(15, 14);
             this.chkChangeAlbumTittle.TabIndex = 14;
@@ -174,7 +221,7 @@
             this.chkChangeContribArtist.AutoSize = true;
             this.chkChangeContribArtist.Checked = true;
             this.chkChangeContribArtist.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.chkChangeContribArtist.Location = new System.Drawing.Point(221, 57);
+            this.chkChangeContribArtist.Location = new System.Drawing.Point(461, 57);
             this.chkChangeContribArtist.Name = "chkChangeContribArtist";
             this.chkChangeContribArtist.Size = new System.Drawing.Size(15, 14);
             this.chkChangeContribArtist.TabIndex = 13;
@@ -186,7 +233,7 @@
             this.chkChangeArtist.AutoSize = true;
             this.chkChangeArtist.Checked = true;
             this.chkChangeArtist.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.chkChangeArtist.Location = new System.Drawing.Point(221, 31);
+            this.chkChangeArtist.Location = new System.Drawing.Point(461, 31);
             this.chkChangeArtist.Name = "chkChangeArtist";
             this.chkChangeArtist.Size = new System.Drawing.Size(15, 14);
             this.chkChangeArtist.TabIndex = 12;
@@ -196,7 +243,7 @@
             // 
             this.lblTip.AutoSize = true;
             this.lblTip.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
-            this.lblTip.Location = new System.Drawing.Point(16, 540);
+            this.lblTip.Location = new System.Drawing.Point(17, 656);
             this.lblTip.Name = "lblTip";
             this.lblTip.Size = new System.Drawing.Size(198, 13);
             this.lblTip.TabIndex = 11;
@@ -208,7 +255,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.txtContribArtist.Location = new System.Drawing.Point(84, 54);
             this.txtContribArtist.Name = "txtContribArtist";
-            this.txtContribArtist.Size = new System.Drawing.Size(131, 20);
+            this.txtContribArtist.Size = new System.Drawing.Size(371, 20);
             this.txtContribArtist.TabIndex = 2;
             // 
             // lblContributingArtist
@@ -232,13 +279,14 @@
             // 
             // picCover
             // 
+            this.picCover.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.picCover.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.picCover.Location = new System.Drawing.Point(17, 162);
             this.picCover.Name = "picCover";
-            this.picCover.Size = new System.Drawing.Size(206, 231);
+            this.picCover.Size = new System.Drawing.Size(459, 231);
             this.picCover.TabIndex = 7;
             this.picCover.TabStop = false;
-            this.picCover.Click += new System.EventHandler(this.picCover_Click);
             // 
             // txtYear
             // 
@@ -246,7 +294,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.txtYear.Location = new System.Drawing.Point(84, 105);
             this.txtYear.Name = "txtYear";
-            this.txtYear.Size = new System.Drawing.Size(131, 20);
+            this.txtYear.Size = new System.Drawing.Size(371, 20);
             this.txtYear.TabIndex = 4;
             // 
             // txtAlbum
@@ -255,7 +303,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.txtAlbum.Location = new System.Drawing.Point(84, 80);
             this.txtAlbum.Name = "txtAlbum";
-            this.txtAlbum.Size = new System.Drawing.Size(131, 20);
+            this.txtAlbum.Size = new System.Drawing.Size(371, 20);
             this.txtAlbum.TabIndex = 3;
             // 
             // txtArtist
@@ -264,7 +312,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.txtArtist.Location = new System.Drawing.Point(52, 28);
             this.txtArtist.Name = "txtArtist";
-            this.txtArtist.Size = new System.Drawing.Size(163, 20);
+            this.txtArtist.Size = new System.Drawing.Size(403, 20);
             this.txtArtist.TabIndex = 1;
             // 
             // lblAlbumYear
@@ -303,81 +351,59 @@
             this.lblArtist.TabIndex = 0;
             this.lblArtist.Text = "Artist";
             // 
-            // btnApply
-            // 
-            this.btnApply.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnApply.Location = new System.Drawing.Point(567, 593);
-            this.btnApply.Name = "btnApply";
-            this.btnApply.Size = new System.Drawing.Size(75, 23);
-            this.btnApply.TabIndex = 6;
-            this.btnApply.Text = "Apply";
-            this.btnApply.UseVisualStyleBackColor = true;
-            this.btnApply.Click += new System.EventHandler(this.btnApply_Click);
-            // 
-            // btnCancel
-            // 
-            this.btnCancel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnCancel.Location = new System.Drawing.Point(648, 593);
-            this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = new System.Drawing.Size(75, 23);
-            this.btnCancel.TabIndex = 7;
-            this.btnCancel.Text = "Cancel";
-            this.btnCancel.UseVisualStyleBackColor = true;
-            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
-            // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(730, 621);
-            this.Controls.Add(this.btnCancel);
-            this.Controls.Add(this.btnApply);
-            this.Controls.Add(this.gbxTag);
-            this.Controls.Add(this.dgvFiles);
-            this.Controls.Add(this.btnPath);
-            this.Controls.Add(this.txtPath);
+            this.ClientSize = new System.Drawing.Size(932, 732);
+            this.Controls.Add(this.splitContainer1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MinimumSize = new System.Drawing.Size(746, 660);
             this.Name = "Main";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Music Tag Manager";
+            this.splitContainer1.Panel1.ResumeLayout(false);
+            this.splitContainer1.Panel1.PerformLayout();
+            this.splitContainer1.Panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
+            this.splitContainer1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvFiles)).EndInit();
             this.gbxTag.ResumeLayout(false);
             this.gbxTag.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picCover)).EndInit();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
 
         private System.Windows.Forms.FolderBrowserDialog fbdPath;
-        private System.Windows.Forms.TextBox txtPath;
-        private System.Windows.Forms.Button btnPath;
-        private System.Windows.Forms.DataGridView dgvFiles;
-        private System.Windows.Forms.GroupBox gbxTag;
-        private System.Windows.Forms.Button btnApply;
-        private System.Windows.Forms.Button btnCancel;
-        private System.Windows.Forms.Label lblAlbumTittle;
-        private System.Windows.Forms.Label lblArtist;
-        private System.Windows.Forms.Label lblAlbumYear;
-        private System.Windows.Forms.Label lblAlbumCover;
-        private System.Windows.Forms.PictureBox picCover;
-        private System.Windows.Forms.TextBox txtYear;
-        private System.Windows.Forms.TextBox txtAlbum;
-        private System.Windows.Forms.TextBox txtArtist;
         private System.Windows.Forms.OpenFileDialog fdgPicture;
-        private System.Windows.Forms.CheckBox chkChangeFilename;
-        private System.Windows.Forms.TextBox txtContribArtist;
-        private System.Windows.Forms.Label lblContributingArtist;
-        private System.Windows.Forms.Label lblTip;
+        private System.Windows.Forms.SplitContainer splitContainer1;
+        private System.Windows.Forms.DataGridView dgvFiles;
+        private System.Windows.Forms.Button btnPath;
+        private System.Windows.Forms.TextBox txtPath;
+        private System.Windows.Forms.GroupBox gbxTag;
+        private System.Windows.Forms.CheckBox chkChangeTittle;
+        private System.Windows.Forms.Button btnCancel;
+        private System.Windows.Forms.Button btnApply;
+        private System.Windows.Forms.CheckBox chkChangeCover;
         private System.Windows.Forms.CheckBox chkChangeAlbumYear;
         private System.Windows.Forms.CheckBox chkChangeAlbumTittle;
         private System.Windows.Forms.CheckBox chkChangeContribArtist;
         private System.Windows.Forms.CheckBox chkChangeArtist;
-        private System.Windows.Forms.CheckBox chkChangeCover;
-        private System.Windows.Forms.CheckBox chkChangeTittle;
+        private System.Windows.Forms.Label lblTip;
+        private System.Windows.Forms.TextBox txtContribArtist;
+        private System.Windows.Forms.Label lblContributingArtist;
+        private System.Windows.Forms.CheckBox chkChangeFilename;
+        private System.Windows.Forms.PictureBox picCover;
+        private System.Windows.Forms.TextBox txtYear;
+        private System.Windows.Forms.TextBox txtAlbum;
+        private System.Windows.Forms.TextBox txtArtist;
+        private System.Windows.Forms.Label lblAlbumYear;
+        private System.Windows.Forms.Label lblAlbumCover;
+        private System.Windows.Forms.Label lblAlbumTittle;
+        private System.Windows.Forms.Label lblArtist;
     }
 }
 
